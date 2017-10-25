@@ -29,5 +29,31 @@ class ProblemsTests: XCTestCase {
         
         XCTAssertEqual(pf, 6857)
     }
+    
+    func test_problem4() {
+        func isPalindrome(_ num: Int) -> Bool {
+            let numStr = Array(String(num))
+            var lhs = 0
+            var rhs = numStr.count - 1
+            
+            while lhs < rhs {
+                if numStr[lhs] != numStr[rhs] {
+                    return false
+                }
+                lhs += 1
+                rhs -= 1
+            }
 
+            return true
+        }
+        
+        XCTAssertEqual(isPalindrome(3), true)
+        XCTAssertEqual(isPalindrome(31), false)
+        XCTAssertEqual(isPalindrome(313), true)
+        XCTAssertEqual(isPalindrome(314), false)
+        XCTAssertEqual(isPalindrome(3826283), true)
+        
+        
+    }
+    
 }
